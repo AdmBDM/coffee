@@ -6,10 +6,10 @@ use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
-use yii\web\BadRequestHttpException;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
+use yii\web\BadRequestHttpException;
+use Yii\web\Response;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
@@ -19,13 +19,13 @@ use frontend\models\ContactForm;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends CoffeeMainController
 {
     /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
+	 * @return array[]
+	 */
+    public function behaviors(): array
+	{
         return [
             'access' => [
                 'class' => AccessControl::className(),
@@ -52,11 +52,11 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function actions()
-    {
+	/**
+	 * @return array
+	 */
+    public function actions(): array
+	{
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -75,7 +75,19 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+//		$blocks = [
+//			'КТП',
+//			'Ремонт',
+//			'Обслуживание',
+//			'Гарантия',
+//			'Марки',
+//			'Контакты',
+//		];
+//		$blocks = Yii::$app->params['blocks'];
+
+		return $this->render('index', [
+				'blocks' => Yii::$app->params['blocks'],
+		]);
     }
 
     /**
@@ -191,10 +203,11 @@ class SiteController extends Controller
      * Resets password.
      *
      * @param string $token
+     *
      * @return mixed
      * @throws BadRequestHttpException
      */
-    public function actionResetPassword($token)
+    public function actionResetPassword(string $token)
     {
         try {
             $model = new ResetPasswordForm($token);
@@ -217,11 +230,12 @@ class SiteController extends Controller
      * Verify email address
      *
      * @param string $token
-     * @throws BadRequestHttpException
-     * @return yii\web\Response
+     *
+     * @return Response
+     *@throws BadRequestHttpException
      */
-    public function actionVerifyEmail($token)
-    {
+    public function actionVerifyEmail(string $token): Response
+	{
         try {
             $model = new VerifyEmailForm($token);
         } catch (InvalidArgumentException $e) {
@@ -256,4 +270,6 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+
+
 }

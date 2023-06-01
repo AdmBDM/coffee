@@ -18,11 +18,12 @@ class m130524_201442_init extends Migration
             'auth_key' => $this->string(32)->notNull(),
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->unique(),
-            'email' => $this->string()->notNull()->unique(),
-
-            'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),
+            'email' => $this->string(),
+            'phone' => $this->string()->notNull()->unique(),
+			'is_admin' => $this->boolean()->defaultValue(false)->notNull(),
+			'status' => $this->smallInteger()->notNull()->defaultValue(10),
+			'created_at' => $this->integer()->notNull(),
+			'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
     }
 
