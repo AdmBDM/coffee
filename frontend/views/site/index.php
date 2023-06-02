@@ -2,6 +2,7 @@
 
 /** @var yii\web\View $this */
 /** @var $blocks */
+/** @var $slides */
 
 $this->title = Yii::$app->params['app_title'];
 $prefix = Yii::$app->params['prefix_blocks_id'];
@@ -9,8 +10,23 @@ $prefix = Yii::$app->params['prefix_blocks_id'];
 
 <div class="site-index">
 
-	<div class="carousel">
-		<img src="/images/slides/img_2.png" alt="">
+	<div class="main_head" id="head-itc-slider">
+		<div class="text_head-itc-slider">Профессиональный ремонт<br>и<br>обслуживание кофемашин</div>
+
+		<div class="itc-slider" data-slider="itc-slider">
+			<div class="itc-slider-wrapper">
+				<div class="itc-slider-items">
+					<?php foreach ($slides as $slide) { ?>
+						<div class="itc-slider-item">
+							<img src="<?= $slide ?>">" alt="">
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		<!-- Кнопки для перехода к предыдущему и следующему слайду -->
+<!--			<button class="itc-slider-btn itc-slider-btn-prev"></button>-->
+<!--			<button class="itc-slider-btn itc-slider-btn-next"></button>-->
+		</div>
 	</div>
 
 	<?php foreach ($blocks as $k => $v) { ?>
