@@ -73,15 +73,6 @@ a.desc:after {
     color: rgba(255, 255, 255, 0.5);
 }
 
-@media(max-width:767px) {
-    .nav li > form > button.logout {
-        display:block;
-        text-align: left;
-        width: 100%;
-        padding: 10px 0;
-    }
-}
-
 .nav > li > form > button.logout:focus,
 .nav > li > form > button.logout:hover {
     text-decoration: none;
@@ -108,15 +99,10 @@ h2 span {
     padding-top: 4px;
 }
 
-.carousel {
-    margin: -15px auto 0;
-    padding: 0;
-    width: 100%;
-    min-height: 200px;
-}
-
-.carousel img {
-    width: 100%;
+.row {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: justify;
 }
 
 .trade_marks_items {
@@ -137,4 +123,16 @@ h2 span {
 .trade_marks_item img {
     width: 100%;
     height: 100%;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 0;
+    }
+    .trade_marks_item {
+        margin: 5px;
+    }
 }

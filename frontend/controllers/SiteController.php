@@ -75,18 +75,9 @@ class SiteController extends CoffeeMainController
      */
     public function actionIndex()
     {
-//		$blocks = [
-//			'КТП',
-//			'Ремонт',
-//			'Обслуживание',
-//			'Гарантия',
-//			'Марки',
-//			'Контакты',
-//		];
-//		$blocks = Yii::$app->params['blocks'];
-
 		return $this->render('index', [
-				'blocks' => Yii::$app->params['blocks'],
+			'blocks' => Yii::$app->params['blocks'],
+			'slides' => Yii::$app->params['slides'],
 		]);
     }
 
