@@ -99,6 +99,10 @@ h2 span {
     padding-top: 4px;
 }
 
+.body-content {
+    width: 100%;
+}
+
 .row {
     margin-left: 0;
     margin-right: 0;
@@ -123,6 +127,10 @@ h2 span {
 .trade_marks_item img {
     width: 100%;
     height: 100%;
+}
+
+.site-contact .row {
+    width: 100%;
 }
 
 @media(max-width:767px) {
