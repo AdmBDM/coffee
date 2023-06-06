@@ -1,6 +1,6 @@
 <?php
 
-/** @var \yii\web\View $this */
+/** @var View $this */
 /** @var string $content */
 
 use common\widgets\Alert;
@@ -9,8 +9,9 @@ use yii\bootstrap4\Breadcrumbs;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
+use yii\web\View;
 
-AppAsset::register($this);
+	AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -39,6 +40,8 @@ AppAsset::register($this);
 		$menuItems = array_merge($menuItems,
 			[['label' => $v, 'url' => ['#' . Yii::$app->params['prefix_blocks_id'] . $k]]]);
 	}
+	$menuItems = array_merge($menuItems,
+			[['label' => 'Контакты', 'url' => ['/site/contact']]]);
 
     if (Yii::$app->user->isGuest) {
 //        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
@@ -64,7 +67,7 @@ AppAsset::register($this);
 <main role="main" class="flex-shrink-0">
 	<div class="container">
         <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            'links' => $this->params['breadcrumbs'] ?? [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>

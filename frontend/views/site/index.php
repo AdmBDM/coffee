@@ -1,11 +1,16 @@
 <?php
 
 /** @var yii\web\View $this */
+/** @var $model */
 /** @var $blocks */
 /** @var $slides */
 
 $this->title = Yii::$app->params['app_title'];
 $prefix = Yii::$app->params['prefix_blocks_id'];
+
+if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
 ?>
 
 <div class="site-index">
