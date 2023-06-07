@@ -1,18 +1,18 @@
 <?php
 
-/** @var yii\web\View $this */
-/** @var ActiveForm $form */
-/** @var ContactForm $model */
-
 use frontend\models\ContactForm;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\ActiveForm;
 use yii\captcha\Captcha;
 
+/** @var yii\web\View $this */
+/** @var ActiveForm $form */
+/** @var ContactForm $model */
+
 $this->title = 'Запрос обратного звонка';
-	$model->email = Yii::$app->params['webEmail'];
-	$model->subject = 'Запрос обратного звонка';
-	$model->body = 'Прошу перезвонить по указанному номеру.';
+$model->email = Yii::$app->params['webEmail'];
+$model->subject = 'Запрос обратного звонка';
+$model->body = 'Прошу перезвонить по указанному номеру.';
 ?>
 
 <div class="site-contact">
