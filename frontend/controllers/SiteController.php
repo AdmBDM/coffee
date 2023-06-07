@@ -2,7 +2,6 @@
 
 namespace frontend\controllers;
 
-//use frontend\models\FeedbackForm;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -76,15 +75,7 @@ class SiteController extends CoffeeMainController
 	 */
 	public function actionIndex()
 	{
-//		$model = new ContactForm();
-//
-//		if (Yii::$app->request->post()) {
-//			myDebug($_POST);
-//			return $this->refresh();
-//		}
-
 		return $this->render('index', [
-//			'model' => $model,
 			'blocks' => Yii::$app->params['blocks'],
 			'slides' => Yii::$app->params['slides'],
 		]);
@@ -274,67 +265,4 @@ class SiteController extends CoffeeMainController
 		]);
 	}
 
-
-	public function actionSend()
-	{
-		$back = '<p><a href="javascript: history.back()">Вернуться назад</a></p>';
-//		$back = "<p><a href=\"javascript: history.back()\">Вернуться назад</a></p>";
-		if (!empty($_POST['phone'])) {
-//		if (!empty($_POST['name']) and !empty($_POST['phone']) and !empty($_POST['mail'])
-//				and !empty($_POST['message'])) {
-//			$name = trim(strip_tags($_POST['name']));
-//			$phone = trim(strip_tags($_POST['phone']));
-//			$mail = trim(strip_tags($_POST['mail']));
-//			$message = trim(strip_tags($_POST['message']));
-//			mail('почта_для_получения_сообщений@gmail.com', 'Письмо с адрес_вашего_сайта',
-//					'Вам написал: ' . $name . '<br />Его номер: ' . $phone . '<br />Его почта: ' . $mail . '<br />
-//Его сообщение: ' . $message, "Content-type:text/html;charset=windows-1251");
-			echo "Ваше сообщение успешно отправлено!<Br> Вы получите ответ в
-ближайшее время<Br> $back";
-			exit;
-		} else {
-			echo "Для отправки сообщения заполните все поля! $back";
-			exit;
-		}
-	}
-
-//	public function actionFeedback()
-//	{
-//		// Создаём экземпляр модели.
-//		$model = new FeedbackForm();
-//		// Устанавливаем формат ответа JSON
-//		Yii::$app->response->format = Response::FORMAT_JSON;
-//		// Если пришёл AJAX запрос
-//		if (Yii::$app->request->isAjax) {
-//			$data = Yii::$app->request->post();
-//			myDebug($data, true);
-//			// Получаем данные модели из запроса
-//			if ($model->load($data)) {
-//				//Если всё успешно, отправляем ответ с данными
-//				return [
-//						"data" => $model,
-//						"error" => null
-//				];
-//			} else {
-//				// Если нет, отправляем ответ с сообщением об ошибке
-//				return [
-//						"data" => null,
-//						"error" => "error1"
-//				];
-//			}
-//		} else {
-//			// Если это не AJAX запрос, отправляем ответ с сообщением об ошибке
-//			return [
-//					"data" => null,
-//					"error" => "error2"
-//			];
-//		}
-//
-//		Yii::$app->response->format = Response::FORMAT_JSON;
-//			return [
-//				"data" => '$model',
-//				"error" => 'null',
-//			];
-//
-//	}
 }

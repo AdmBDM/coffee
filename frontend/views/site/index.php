@@ -1,7 +1,6 @@
 <?php
 
 /** @var yii\web\View $this */
-/** @var $model */
 /** @var $blocks */
 /** @var $slides */
 

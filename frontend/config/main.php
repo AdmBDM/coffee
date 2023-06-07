@@ -9,8 +9,8 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-//    'bootstrap' => ['log'],
-    'bootstrap' => ['debug'],
+    'bootstrap' => ['log'],
+//    'bootstrap' => ['debug'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
@@ -39,8 +39,6 @@ return [
         ],
         'urlManager' => [
 			'enablePrettyUrl' => true,
-//			'showScriptName' => false,
-//			'enableStrictParsing' => false,
 			'rules' => [
 				'' => 'site/index',
 				'<controller:\w+>/<action:\w+>/' => '<controller>/<action>',
