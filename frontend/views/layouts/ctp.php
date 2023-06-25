@@ -36,9 +36,15 @@ use yii\web\View;
         ],
     ]);
     $menuItems = [];
+//	foreach (Yii::$app->params['blocks'] as $k => $v) {
+//		$menuItems = array_merge($menuItems,
+//			[['label' => $v, 'url' => ['#' . Yii::$app->params['prefix_blocks_id'] . $k]]]);
+//	}
 	foreach (Yii::$app->params['blocks'] as $k => $v) {
-		$menuItems = array_merge($menuItems,
-			[['label' => $v, 'url' => ['#' . Yii::$app->params['prefix_blocks_id'] . $k]]]);
+		if ($v['on'] & $v['nav_menu']) {
+			$menuItems = array_merge($menuItems,
+				[['label' => $v['title_short'], 'url' => ['#' . Yii::$app->params['prefix_blocks_id'] . $k]]]);
+		}
 	}
 	$menuItems = array_merge($menuItems,
 			[['label' => 'Контакты', 'url' => ['/site/contact']]]);

@@ -14,6 +14,10 @@
 	$brand_path = Yii::$app->params['brand_path'];
 ?>
 
+<p>Мы ремонтируем и оказываем сервисное обслуживание кофемашин всех известных брендов. В наличии в нашем сервисе всегда есть оригинальные запчасти (даже на модели кофемашин, которые больше не выпускаются), чтобы оперативно произвести ремонт. В среднем починка занимает от 2 до 5 дней.</p>
+
+<p>ТОП-10 наших «подопечных»</p>
+
 <div class="trade_marks">
 	<div class="trade_marks_items">
 		<?php foreach ($brands as $brand) { ?>
@@ -21,5 +25,7 @@
 				<img src="<?= $brand_path . $brand; ?>" alt="">
 			</div>
 		<?php } ?>
-	</div>
+		<div class="trade_marks_item">
+			<img src="/images/no-image.png" alt="">
+		</div>	</div>
 </div>

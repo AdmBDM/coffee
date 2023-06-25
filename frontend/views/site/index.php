@@ -36,9 +36,13 @@ if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_N
 	<?php foreach ($blocks as $k => $v) { ?>
 		<div class="row">
 			<div class="body-content">
-				<?php $name = $prefix . $k; ?>
-				<h2 class="npp-block" id="<?= $name ?>"><span><?= $k ?></span><?= $v ?></h2>
-				<?php require $name . '.php'; ?>
+				<?php if ($v['on']) { ?>
+					<?php $name = $prefix . $k; ?>
+					<?php if ($v['label']) { ?>
+						<label class="block" id="<?= $name ?>"><?= $v['title_full'] ?></label>
+					<?php } ?>
+					<?php require $name . '.php'; ?>
+				<?php } ?>
 			</div>
 		</div>
 	<?php } ?>

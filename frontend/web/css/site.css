@@ -1,12 +1,20 @@
 * {
     box-sizing: border-box;
+    /*--label-text-color: #1c7430;*/
+    --label-text-color: #212529;
+    --header-bckg-color: #212529;
+    --footer-bckg-color: #f5f5f5;
+    /*--sign-block: '☕';*/
+    --sign-block: '⚙';
+    --sign-padding-side: 30px;
+    --sign-font-size: var(--sign-padding-side);
 }
 main > .container {
     padding: 70px 15px 20px;
 }
 
 .footer {
-    background-color: #f5f5f5;
+    background-color: var(--footer-bckg-color);
     font-size: .9em;
     height: 60px;
 }
@@ -34,12 +42,12 @@ a.asc:after, a.desc:after {
 }
 
 a.asc:after {
-    border-bottom: solid 7px #212529;
+    border-bottom: solid 7px var(--header-bckg-color);
     border-top-width: 0;
 }
 
 a.desc:after {
-    border-top: solid 7px #212529;
+    border-top: solid 7px var(--header-bckg-color);
     border-bottom-width: 0;
 }
 
@@ -83,16 +91,34 @@ a.desc:after {
     outline: none;
 }
 
+.block {
+    padding-top: 60px;
+    color: var(--label-text-color);
+    font-size: 2rem;
+    font-weight: 500;
+}
+.block::before, .block::after {
+    content: var(--sign-block);
+    font-size: var(--sign-font-size);
+}
+.block::before {
+    margin-top: 30px;
+    padding-right: var(--sign-padding-side);
+}
+.block::after {
+    padding-left: var(--sign-padding-side);
+}
+
 h2 {
     padding-top: 60px;
-    color: #1c7430;
+    color: var(--label-text-color);
 }
 h2 span {
     display: inline-block;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #1c7430;
+    background-color: var(--label-text-color);
     margin-right: 20px;
     color: white;
     text-align: center;
@@ -143,4 +169,17 @@ h2 span {
     .trade_marks_item {
         margin: 5px;
     }
+
+    .block,
+    .block::before,
+    .block::after {
+        font-size: 1.3rem;
+    }
+    .block::before {
+        padding-right: 10px;
+    }
+    .block::after {
+        padding-left: 10px;
+    }
+
 }
