@@ -159,7 +159,7 @@ h2 span {
     width: 100%;
 }
 
-@media(max-width:767px) {
+@media(max-width:800px) {
     .nav li > form > button.logout {
         display:block;
         text-align: left;
@@ -180,6 +180,16 @@ h2 span {
     }
     .block::after {
         padding-left: 10px;
+    }
+
+    .reason-item {
+        width: 48%;
+    }
+}
+
+@media(max-width:500px) {
+    .reason-item {
+        width: 98%;
     }
 
 }

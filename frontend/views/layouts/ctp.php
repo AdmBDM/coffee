@@ -11,6 +11,7 @@ use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 use yii\web\View;
 
+	$keywords = Yii::$app->params['keywords'];
 	AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -19,6 +20,8 @@ use yii\web\View;
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="keywords" content="<?= $keywords ?>">
+	<meta name="description" content="<?= $keywords ?>">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -36,10 +39,6 @@ use yii\web\View;
         ],
     ]);
     $menuItems = [];
-//	foreach (Yii::$app->params['blocks'] as $k => $v) {
-//		$menuItems = array_merge($menuItems,
-//			[['label' => $v, 'url' => ['#' . Yii::$app->params['prefix_blocks_id'] . $k]]]);
-//	}
 	foreach (Yii::$app->params['blocks'] as $k => $v) {
 		if ($v['on'] & $v['nav_menu']) {
 			$menuItems = array_merge($menuItems,

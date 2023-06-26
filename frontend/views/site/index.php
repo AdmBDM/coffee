@@ -15,7 +15,7 @@ if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_N
 <div class="site-index">
 
 	<div class="main_head" id="head-itc-slider">
-		<div class="text_head-itc-slider">Профессиональный ремонт<br>и<br>обслуживание кофемашин</div>
+		<div class="text_head-itc-slider">Профессиональный ремонт<br>и<br>обслуживание кофемашин<br>г. СОЧИ</div>
 
 		<div class="itc-slider" data-slider="itc-slider">
 			<div class="itc-slider-wrapper">
