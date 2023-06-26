@@ -11,7 +11,9 @@ use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
 use yii\web\View;
 
-	$keywords = Yii::$app->params['keywords'];
+//	if (!empty(Yii::$app->params['keywords'])) {
+	$keywords = !empty(Yii::$app->params['keywords']) ? Yii::$app->params['keywords'] : '';
+//	}
 	AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
