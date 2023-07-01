@@ -15,10 +15,10 @@ use yii\web\Response;
 class SiteController extends Controller
 {
     /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
+	 * @return array[]
+	 */
+    public function behaviors(): array
+	{
         return [
             'access' => [
                 'class' => AccessControl::class,
@@ -44,10 +44,10 @@ class SiteController extends Controller
     }
 
     /**
-     * {@inheritdoc}
-     */
-    public function actions()
-    {
+	 * @return array[]
+	 */
+    public function actions(): array
+	{
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -60,8 +60,8 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
-    {
+    public function actionIndex(): string
+	{
         return $this->render('index');
     }
 
