@@ -92,6 +92,20 @@ form[id='contact-view'] {
 	padding: 5px;
 }
 
+@media(max-width:992px) {
+	.for-link-item {
+		width: 46%;
+	}
+
+	.for-link-item:not(:last-child) {
+		border-right: none;
+	}
+
+	.for-link-item:first-child {
+		border-right: 5px solid lightgrey;
+	}
+}
+
 @media(max-width:800px) {
 	form[id='contact-view'] a {
 		font-size: 15px;
@@ -101,5 +115,27 @@ form[id='contact-view'] {
 	.map-yandex {
 		width: 80%;
 	}
+}
+
+@media(max-width:767px) {
+	.for-link-item {
+		width: 98%;
+		border-right: none;
+	}
+
+	.for-link-item:first-child {
+		border-right: none;
+	}
+
+	.for-link-item:not(:first-child) {
+		padding-left: 40px;
+	}
+}
+
+@media(max-width:500px) {
+	.reason-item {
+		width: 98%;
+	}
+
 }
 
