@@ -5,21 +5,40 @@ use yii\bootstrap4\Html;
 use yii\bootstrap4\ActiveForm;
 use yii\captcha\Captcha;
 
-/** @var yii\web\View $this */
-/** @var ActiveForm $form */
-/** @var ContactForm $model */
+/** @var $this	yii\web\View */
+/** @var $form	ActiveForm */
+/** @var $model	ContactForm */
+/** @var $mode */
+/** @var $brands */
 
-$this->title = 'Запрос обратного звонка';
-$model->email = Yii::$app->params['webEmail'];
-$model->subject = 'Запрос обратного звонка';
-$model->body = 'Прошу перезвонить по указанному номеру.';
+	$model->body = 'Прошу перезвонить по указанному номеру.';
+	$model->email = Yii::$app->params['webEmail'];
+
+	switch ($mode) {
+		case 'm':
+			$class = 'master';
+			$this->title = 'Вызов мастера';
+			$model->subject = 'Вызов мастера';
+			break;
+
+		case 'r':
+			$class = 'request';
+			$this->title = 'Оставить заявку прямо сейчас';
+			$model->subject = 'Оставить заявку прямо сейчас';
+			break;
+
+		default:
+			$class = 'contact';
+			$this->title = 'Запрос обратного звонка';
+			$model->subject = 'Запрос обратного звонка';
+	}
 ?>
 
-<div class="site-contact">
+<div class="site-<?= $class; ?>">
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin([
-				'id' => 'contact-form',
+				'id' => $class . '-form',
 			]); ?>
 
                 <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
@@ -27,6 +46,8 @@ $model->body = 'Прошу перезвонить по указанному но
                 <?= $form->field($model, 'email')->hiddenInput()->label(false) ?>
 
                 <?= $form->field($model, 'phone') ?>
+
+                <?= $form->field($model, 'brand_id')->dropDownList($brands, ['prompt' => 'Выберите производителя...']) ?>
 
                 <?= $form->field($model, 'subject') ?>
 

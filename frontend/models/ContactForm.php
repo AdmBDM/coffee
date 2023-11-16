@@ -16,6 +16,7 @@ class ContactForm extends Model
     public $subject;
     public $body;
     public $verifyCode;
+    public $brand_id;
 
 
 	/**
@@ -46,6 +47,7 @@ class ContactForm extends Model
             'body' => 'Сообщение',
             'verifyCode' => 'Verification Code',
             'captcha' => 'Капча',
+            'brand_id' => 'Фирма-производитель',
         ];
     }
 

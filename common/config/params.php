@@ -63,6 +63,20 @@ return [
 			'nav_menu' => true,
 			'label' => true
 		],
+		'7' => [
+			'title_full' => 'Вызов мастера',
+			'title_short' => 'Вызов мастера',
+			'on' => false,
+			'nav_menu' => true,
+			'label' => true
+		],
+		'8' => [
+			'title_full' => 'Оставить заявку прямо сейчас',
+			'title_short' => 'Оставить заявку',
+			'on' => false,
+			'nav_menu' => true,
+			'label' => true
+		],
 	],
 	'slides' => [
 		'/images/slides/img_2.png',

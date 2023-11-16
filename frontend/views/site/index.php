@@ -4,7 +4,9 @@
 /** @var $blocks */
 /** @var $slides */
 
-$this->title = Yii::$app->params['app_title'];
+	use yii\bootstrap4\Html;
+
+	$this->title = Yii::$app->params['app_title'];
 $prefix = Yii::$app->params['prefix_blocks_id'];
 
 if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
@@ -16,6 +18,23 @@ if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_N
 
 	<div class="main_head" id="head-itc-slider">
 		<div class="text_head-itc-slider">Профессиональный ремонт<br>и<br>обслуживание кофемашин<br>г. СОЧИ</div>
+
+		<div class="block-head_slang-top">
+			<div class="slang-row1">Бесплатная диагностика</div>
+			<div class="slang-row1">Ремонт и восстановление</div>
+			<div class="slang-row2">На дому, в офисе, с выездом мастера</div>
+			<div class="slang-row3">Низкие цены</div>
+		</div>
+
+		<div class="block-head_slang-bottom">
+			<div class="slang-row4">Детейлинг корпуса в подарок!!!</div>
+		</div>
+
+		<div class="block-head_btn">
+			<button><?= Html::a('вызов мастера', ['site/contact?mode=m']) ?></button>
+			<button><?= Html::a('обратный звонок', ['site/contact?mode=c']) ?></button>
+			<button><?= Html::a('оставить заявку прямо сейчас', ['site/contact?mode=r']) ?></button>
+		</div>
 
 		<div class="itc-slider" data-slider="itc-slider">
 			<div class="itc-slider-wrapper">

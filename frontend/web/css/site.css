@@ -8,7 +8,7 @@
     --sign-block: '⚙';
     --sign-padding-side: 30px;
     --sign-font-size: var(--sign-padding-side);
-    --font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family: Roboto, 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 main > .container {
     padding: 70px 15px 20px;
