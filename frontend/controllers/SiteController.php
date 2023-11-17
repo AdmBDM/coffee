@@ -2,12 +2,14 @@
 
 namespace frontend\controllers;
 
+use common\models\Brands;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\web\BadRequestHttpException;
 use Yii\web\Response;
 use common\models\LoginForm;
@@ -121,8 +123,13 @@ class SiteController extends CoffeeMainController
 	 *
 	 * @return mixed
 	 */
-	public function actionContact()
+	public function actionContact($mode = 'c')
 	{
+		$brandsAll = Brands::find()
+				->orderBy('brand_name_noru')
+				->all();
+		$brandsItems = ArrayHelper::map($brandsAll,'id', 'brand_name_noru');
+
 		$model = new ContactForm();
 
 		if (Yii::$app->request->method === 'POST') {
@@ -137,8 +144,10 @@ class SiteController extends CoffeeMainController
 			}
 		}
 
-		return $this->render('contact', [
+		return $this->render(($mode ? 'recall' : 'contact'), [
 			'model' => $model,
+			'mode' => $mode,
+			'brands' => $brandsItems,
 		]);
 	}
 

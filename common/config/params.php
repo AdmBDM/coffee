@@ -63,11 +63,42 @@ return [
 			'nav_menu' => true,
 			'label' => true
 		],
+		'7' => [
+			'title_full' => 'Вызов мастера',
+			'title_short' => 'Вызов мастера',
+			'on' => false,
+			'nav_menu' => true,
+			'label' => true
+		],
+		'8' => [
+			'title_full' => 'Оставить заявку прямо сейчас',
+			'title_short' => 'Оставить заявку',
+			'on' => false,
+			'nav_menu' => true,
+			'label' => true
+		],
 	],
 	'slides' => [
 		'/images/slides/img_2.png',
 		'/images/slides/img_0.png',
 		'/images/slides/img_1.png',
+	],
+	'social' => [
+		'img_path' => 'images/social/',
+		'nets' => [
+			[
+				'id' => 'inst',
+				'name' => 'Инстаграмм',
+				'link' => 'https://instagram.com/coffeetech.sochi?igshid=NzZlODBkYWE4Ng==',
+				'img' => 'inst.png',
+			],
+			[
+				'id' => 'yout',
+				'name' => 'Инстаграмм',
+				'link' => 'https://youtube.com/@CoffeeTech.?si=Gk1JWdoo9BWbOLor',
+				'img' => 'youtube.png',
+			],
+		],
 	],
 	'emailRecall' => 'Jim7kzn@gmail.com',
 	'telegramAPI' => '6203818836:AAG2A9QEeCO67MdoCXdehvtZbKhwCZ_T5Ro',

@@ -16,6 +16,7 @@ class ContactForm extends Model
     public $subject;
     public $body;
     public $verifyCode;
+    public $brand_id;
 
 
 	/**
@@ -41,11 +42,12 @@ class ContactForm extends Model
         return [
             'name' => 'Ф.И.О.',
             'email' => 'E-mail',
-            'phone' => 'Номер, куда перезвонить',
+            'phone' => 'Номер телефона',
             'subject' => 'Тема',
             'body' => 'Сообщение',
             'verifyCode' => 'Verification Code',
             'captcha' => 'Капча',
+            'brand_id' => 'Фирма-производитель',
         ];
     }
 
