@@ -101,9 +101,24 @@ use yii\web\View;
 </main>
 
 <footer class="footer mt-auto py-3 text-muted">
-    <div class="container">
-        <p class="float-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-    </div>
+	<div class="col-md-12 col-sm-12">
+		<div class="social-block">
+			<div class="social_icons_wrapp">
+				<!-- noindex -->
+				<?php
+					$img_path = Yii::$app->params['social']['img_path'];
+				foreach (Yii::$app->params['social']['nets'] as $net) {?>
+					<a href="<?= $net['link'];?>" target="_blank" rel="nofollow" class="social_icons_item" title="<?= $net['name'];?>">
+						<img src="<?= $img_path . $net['img'];?>" alt="<?= $net['id'];?>">
+					</a>
+				<?php } ?>
+				<!-- /noindex -->
+			</div>
+		</div>
+		<div class="container">
+			<p class="float-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+		</div>
+	</div>
 </footer>
 
 <?php $this->endBody() ?>

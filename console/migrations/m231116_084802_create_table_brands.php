@@ -33,8 +33,6 @@ class m231116_084802_create_table_brands extends Migration
 			'brand_name_ru' => $this->string()->notNull()->unique(),
 			'brand_name_noru' => $this->string()->notNull()->unique(),
 			'file_image' => $this->string(),
-			'created_at' => $this->integer()->notNull(),
-			'updated_at' => $this->integer()->notNull(),
 		], $tableOptions);
     }
 

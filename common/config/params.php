@@ -83,6 +83,23 @@ return [
 		'/images/slides/img_0.png',
 		'/images/slides/img_1.png',
 	],
+	'social' => [
+		'img_path' => 'images/social/',
+		'nets' => [
+			[
+				'id' => 'inst',
+				'name' => 'Инстаграмм',
+				'link' => 'https://instagram.com/coffeetech.sochi?igshid=NzZlODBkYWE4Ng==',
+				'img' => 'inst.png',
+			],
+			[
+				'id' => 'yout',
+				'name' => 'Инстаграмм',
+				'link' => 'https://youtube.com/@CoffeeTech.?si=Gk1JWdoo9BWbOLor',
+				'img' => 'youtube.png',
+			],
+		],
+	],
 	'emailRecall' => 'Jim7kzn@gmail.com',
 	'telegramAPI' => '6203818836:AAG2A9QEeCO67MdoCXdehvtZbKhwCZ_T5Ro',
 ];

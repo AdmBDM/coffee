@@ -1,17 +1,14 @@
 <?php
 
-	$brands = [
-		'img_0.png',
-		'img_1.png',
-		'img_2.png',
-		'img_3.png',
-		'img_4.png',
-		'img_5.png',
-		'img_6.png',
-		'img_7.png',
-		'img_8.png',
-		'img_9.png',
-	];
+	use common\models\Brands;
+	use yii\helpers\ArrayHelper;
+
+	$brandsAll = Brands::find()
+			->where('flag_top')
+			->orderBy('id')
+			->all();
+	$brandsItems = ArrayHelper::map($brandsAll,'id', 'file_image');
+
 	$brand_path = Yii::$app->params['brand_path'];
 ?>
 
@@ -21,9 +18,9 @@
 
 <div class="trade_marks">
 	<div class="trade_marks_items">
-		<?php foreach ($brands as $brand) { ?>
+		<?php foreach ($brandsItems as $k => $v) { ?>
 			<div class="trade_marks_item">
-				<img src="<?= $brand_path . $brand; ?>" alt="">
+				<img src="<?= $brand_path . $v; ?>" alt="">
 			</div>
 		<?php } ?>
 	</div>

@@ -11,7 +11,6 @@ use yii\captcha\Captcha;
 /** @var $mode */
 /** @var $brands */
 
-	$model->body = 'Прошу перезвонить по указанному номеру.';
 	$model->email = Yii::$app->params['webEmail'];
 
 	switch ($mode) {
@@ -19,18 +18,21 @@ use yii\captcha\Captcha;
 			$class = 'master';
 			$this->title = 'Вызов мастера';
 			$model->subject = 'Вызов мастера';
+			$model->body = 'Требуется мастер. Прошу перезвонить по указанному номеру.';
 			break;
 
 		case 'r':
 			$class = 'request';
 			$this->title = 'Оставить заявку прямо сейчас';
 			$model->subject = 'Оставить заявку прямо сейчас';
+			$model->body = 'Есть проблемы с кофемашиной.';
 			break;
 
 		default:
 			$class = 'contact';
 			$this->title = 'Запрос обратного звонка';
 			$model->subject = 'Запрос обратного звонка';
+			$model->body = 'Прошу перезвонить по указанному номеру.';
 	}
 ?>
 
@@ -49,9 +51,9 @@ use yii\captcha\Captcha;
 
                 <?= $form->field($model, 'brand_id')->dropDownList($brands, ['prompt' => 'Выберите производителя...']) ?>
 
-                <?= $form->field($model, 'subject') ?>
+                <?= $form->field($model, 'subject')->hiddenInput()->label(false) ?>
 
-                <?= $form->field($model, 'body')->textarea(['rows' => 6])->hiddenInput()->label(false) ?>
+                <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
 <!--				--><?php //= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
 //						'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',

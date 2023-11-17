@@ -17,12 +17,38 @@ main > .container {
 .footer {
     background-color: var(--footer-bckg-color);
     font-size: .9em;
-    height: 60px;
+    /*height: 60px;*/
 }
 
 .footer > .container {
     padding-right: 15px;
     padding-left: 15px;
+}
+
+.social-block {
+    display: block;
+    margin: 0 auto;
+}
+
+.social_icons_wrapp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.social_icons_item {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 5px 10px;
+}
+
+.social_icons_item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
 }
 
 .not-set {

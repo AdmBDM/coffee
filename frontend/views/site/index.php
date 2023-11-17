@@ -3,6 +3,7 @@
 /** @var yii\web\View $this */
 /** @var $blocks */
 /** @var $slides */
+/** @var $brands */
 
 	use yii\bootstrap4\Html;
 

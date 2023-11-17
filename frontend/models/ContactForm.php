@@ -42,7 +42,7 @@ class ContactForm extends Model
         return [
             'name' => 'Ф.И.О.',
             'email' => 'E-mail',
-            'phone' => 'Номер, куда перезвонить',
+            'phone' => 'Номер телефона',
             'subject' => 'Тема',
             'body' => 'Сообщение',
             'verifyCode' => 'Verification Code',
